@@ -39,7 +39,7 @@ const pAequorFactory = (specimanNum, dna) => {
       const percentageTo2Deci = percentOfDNAshared.toFixed(2);
       console.log(`${this.specimanNum} and ${otherOrg.specimanNum} have ${percentageTo2Deci}$ DNA in common.`)
     },
-    willLikelySurvice() {
+    willLikelySurvive() {
       const cOrg = this.dna.filter(el => el === "C" || el === "G");
       return cOrg.length / this.dna.length >= 0.6;
     },
@@ -51,7 +51,7 @@ let idCounter = 1;
 
 while (survivingSpecimen.length < 30) {
   let newOrg = pAequorFactory(idCounter, mockUpStrand());
-  if (newOrg.willLikelySurvice()) {
+  if (newOrg.willLikelySurvive()) {
     survivingSpecimen.push(newOrg);
   }
   idCounter++;
